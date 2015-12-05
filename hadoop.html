@@ -85,6 +85,7 @@ It primarily consists of 3 parts:
 
 It's easier to create an eclipse java project and add relevant hadoop jar files for the code below. 
 </p> 
+<xmp>
 package com.kush;
 import java.io.IOException;
 import java.util.*;
@@ -138,19 +139,21 @@ public class WordCount {
               //Driver function ends
 
 }
+</xmp>
 <p>
 After resolving the dependencies, we can export a runnable jar file. This jar file can be scp'd to your Hadoop Cluster and can be executed by the following command:
-
+</p><p>
 hadoop jar wordcount.jar /user/input /user/output
-
+</p><p>
 The output files produced can be listed and opened using the following command:
-
+</p><p>
 hadoop fs -ls /user/output
+</p><p>
 hadoop fs -cat /user/output/part-00000
+</p>
 
-
-
-That's about it! Feel free to ask any questions below!
+<p>
+That's about it! 
 
 </p>
 							
