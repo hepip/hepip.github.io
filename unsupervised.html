@@ -1,0 +1,135 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>UnSupervised Learning Algorithms</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:700italic,400,300,700' rel='stylesheet' type='text/css'>
+		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-panels.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel-noscript.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-desktop.css" />
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
+	</head>
+	<body class="right-sidebar">
+
+	<!-- Header -->
+		<div id="header">
+			<div class="container">
+					
+				<!-- Logo -->
+					<div id="logo">
+						<h1><a href="#">DATASCIENTIST.CO.IN</a></h1>
+					</div>
+				
+				<!-- Nav -->
+					<nav id="nav">
+						<ul>
+							<li><a href="index.html">Homepage</a></li>
+							<li><a href="supervised.html">Supervised Learning</a></li>
+							<li class="active"><a href="#">UnSupervised Learning</a></li>
+							<li><a href="hadoop.html">Data Scientist Tools</a></li>
+						</ul>
+					</nav>
+
+			</div>
+		</div>
+	<!-- Header -->
+		
+	<!-- Banner -->
+		<div id="banner">
+			<div class="container">
+			</div>
+		</div>
+	<!-- /Banner -->
+
+	<!-- Main -->
+		<div id="page">
+				
+			<!-- Main -->
+			<div id="main" class="container">
+				<div class="row">
+					<div class="9u">
+						<section>
+							<header>
+								<h2>K Means Clustering</h2>
+								<span class="byline">Python code for KMeans</span>
+							</header>
+							<p>
+							<xmp>
+								import numpy
+import matplotlib
+matplotlib.use('Agg')
+from scipy.cluster.vq import *
+import matplotlib.pyplot as plt
+%matplotlib inline  
+
+# generate 3 sets of normally distributed points around
+# different means with different variances
+pt1 = numpy.random.normal(1, 0.2, (100,2))
+pt2 = numpy.random.normal(2, 0.5, (300,2))
+pt3 = numpy.random.normal(3, 0.3, (100,2))
+ 
+# slightly move sets 2 and 3 (for a prettier output)
+pt2[:,0] += 1
+pt3[:,0] -= 0.5
+ 
+xy = numpy.concatenate((pt1, pt2, pt3))
+ 
+# kmeans for 3 clusters
+res, idx = kmeans2(numpy.array(zip(xy[:,0],xy[:,1])),3)
+ 
+colors = ([([0.4,1,0.4],[1,0.4,0.4],[0.1,0.8,1])[i] for i in idx])
+ 
+# plot colored points
+plt.scatter(xy[:,0],xy[:,1], c=colors)
+ 
+# mark centroids as (X)
+plt.scatter(res[:,0],res[:,1], marker='o', s = 500, linewidths=2, c='none')
+plt.scatter(res[:,0],res[:,1], marker='x', s = 500, linewidths=2)
+ 
+ 
+								
+								
+								
+							</xmp>
+								
+								
+							</p>
+						</section>
+					</div>
+					
+					<div class="3u">
+						<section class="sidebar">
+							<header>
+								<h2>Clustering Algorithms</h2>
+							</header>
+							<ul class="style1">
+								<li><a href="#">K Means Clustering</a></li>
+							</ul>
+						</section>
+					</div>
+
+				</div>
+			</div>
+			<!-- Main -->
+
+		</div>
+	<!-- /Main -->
+
+	<!-- Copyright -->
+		<div id="copyright" class="container">
+			Copyright: <a href="http://datascientist.co.in">DataScientist.Co.In</a> 
+		</div>
+
+
+	</body>
+</html>
